@@ -165,7 +165,7 @@ def login_required_json(
         def _decorated(request, *args, **kwargs):
             authorized = False
             if accept_default_auth:
-                if request.user.is_authenticated():
+                if request.user.is_authenticated:
                     authorized = True
 
             if ((not authorized) and accept_basic_auth):

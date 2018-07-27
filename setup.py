@@ -14,7 +14,7 @@ setup(
         'Programming Language :: Python3',
         'License :: OSI Approved :: GPL License',
         'Operating System :: OS Indipendent',
-        'Framework :: Django',
+        'Framework :: Django 2',
     ]
 )
 
