@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = "django-tojson",
-    version = "0.3.1",
+    version = "0.3.2",
     description = open("README.md", 'r').read(),
     url = "https://github.com/davidek/django-tojson",
     author="Davide Kirchner, Roberto Bampi",
@@ -11,7 +11,7 @@ setup(
         "tojson"
     ],
     classifiers = [
-        'Programming Language :: Python',
+        'Programming Language :: Python3',
         'License :: OSI Approved :: GPL License',
         'Operating System :: OS Indipendent',
         'Framework :: Django',

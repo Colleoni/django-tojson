@@ -47,9 +47,10 @@ def charset_already_set(response):
     """
     This function check if charset is already set in Content-Type
     """
+    import six
     charset = response.get('Content-Type', None)
     if charset:
-        if 'charset' in unicode(charset).lower():
+        if 'charset' in str(charset).lower():
             return True
         else:
             return False
