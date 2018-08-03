@@ -17,7 +17,8 @@ try:
     import json
 except ImportError:
     import simplejson as json
-
+from django.contrib.auth import authenticate
+import base64
 
 _DEFAULT_ERRORS = {
     #'login_required':
@@ -140,9 +141,6 @@ def render_to_json(not_found_error=ERRORS['not_found'], **default_args):
         return _decorated
     return wrap
 
-from django.contrib.auth import authenticate
-import base64
-
 # TODO: replace `error` with somthing configurable via TOJSON_DEFAULT_ERRORS:
 # TODO: more possible errors:
 #   missing_login_info, wrong_login_format, wrong_login_credentials
@@ -175,7 +173,7 @@ def login_required_json(
                 try:
                     auth_type, token = auth_header.split()
                     if auth_type.lower() == "basic":
-                        uname, passwd = base64.b64decode(token).split(':')
+                        uname, passwd = base64.b64decode(token).decode('utf-8').split(':')
                         user = authenticate(username=uname, password=passwd)
                         if user is not None:
                             if user.is_active:

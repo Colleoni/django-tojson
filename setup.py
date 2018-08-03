@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = "django-tojson",
-    version = "0.3.4",
+    version = "0.3.5",
     description = open("README.md", 'r').read(),
     url = "https://github.com/davidek/django-tojson",
     author="Davide Kirchner, Roberto Bampi",
